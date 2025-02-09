@@ -239,9 +239,9 @@ Hieronder een overzicht van de secties die ik heb doorlopen.
   - Multiple language, screen sizes support
 - De code kan je [`hier`](Designer/MultipleLanguages/) terug vinden.
 - Hieronder vindt je wat foto's van de programma's die ik heb gemaakt tijdens dit hoofdstuk.
-  - Dit is een foto mijn programma in EN-US taal
+  - Dit is een foto mijn programma in EN-US taal </br>
     ![](Designer/Images/18_1.png)
-  - Dit is een foto mijn programma in nl-rBE taal
+  - Dit is een foto mijn programma in nl-rBE taal </br>
     ![](Designer/Images/18_2.png)
   - De tekst van de verschillende talen word per taal apart opgeslagen in een strings.xml bestan.
     ![](Designer/Images/18_3.png)
@@ -270,7 +270,7 @@ Hieronder een overzicht van de secties die ik heb doorlopen.
     - Dit is een foto's van de designer editor van de verschillende pagina's:
       ![Foto van mijn Project 3](Designer/Images/20_1.png)
       ![Foto van mijn Project 3](Designer/Images/20_2.png)
-    - Dit zijn foto's van mijn programma zelf op de gsm.
+    - Dit zijn foto's van mijn programma zelf op de gsm. </br>
       ![Foto van mijn Project 3](Compose/Images/13_1.png)
       ![Foto van mijn Project 3](Compose/Images/13_2.png)
       ![Foto van mijn Project 3](Compose/Images/13_3.png)
