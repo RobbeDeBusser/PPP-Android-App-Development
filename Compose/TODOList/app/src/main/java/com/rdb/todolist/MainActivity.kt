@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -50,13 +51,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rdb.todolist.ui.theme.TODOListTheme
+import kotlin.math.sqrt
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             TODOListTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -73,6 +74,9 @@ class MainActivity : ComponentActivity() {
 fun MainPage() {
 
     val myContext = LocalContext.current
+
+    val backgroundColor = MaterialTheme.colorScheme.primary
+    val textColor = getContrastColor(backgroundColor)
 
     val todoName = remember {
         mutableStateOf("")
@@ -111,22 +115,19 @@ fun MainPage() {
                 onValueChange = {
                     todoName.value = it
                 },
-                label = { Text(text = "Enter TODO") },
+                label = { Text(text = "Enter TODO", color = textColor) },
                 colors = TextFieldDefaults.textFieldColors(
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    focusedLabelColor = Color.Green,
-                    unfocusedLabelColor = Color.White,
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    cursorColor = Color.White
+                    containerColor = backgroundColor,
+                    cursorColor = textColor
                 ),
                 shape = RoundedCornerShape(5.dp),
                 modifier = Modifier
                     .border(1.dp, Color.Black, RoundedCornerShape(5.dp))
-                    .weight(7F) //3F for the button weight
+                    .weight(7F)
                     .height(60.dp),
-                textStyle = TextStyle(color = Color.White, textAlign = TextAlign.Center)
-
+                textStyle = TextStyle(color = Color(0xFFFFFFFF), textAlign = TextAlign.Center)
             )
 
             Spacer(modifier = Modifier.width(5.dp))
@@ -147,7 +148,7 @@ fun MainPage() {
                     .height(60.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(id = R.color.green),
-                    contentColor = Color.White
+                    contentColor = textColor
                 ),
                 shape = RoundedCornerShape(5.dp),
                 border = BorderStroke(1.dp, Color.Black)
@@ -203,7 +204,8 @@ fun MainPage() {
                                         updateDialogStatus.value = true
                                         clickedItemIndex.value = index
                                         clickedItem.value = item
-                                    }
+                                    },
+                                    modifier = Modifier.size(48.dp)
                                 ) {
                                     Icon(
                                         Icons.Filled.Edit,
@@ -215,7 +217,8 @@ fun MainPage() {
                                     onClick = {
                                         deleteDialogStatus.value = true
                                         clickedItemIndex.value = index
-                                    }
+                                    },
+                                    modifier = Modifier.size(48.dp)
                                 ) {
                                     Icon(
                                         Icons.Filled.Delete,
@@ -324,4 +327,14 @@ fun MainPage() {
 
     }
 
+}
+
+fun getContrastColor(background: Color): Color {
+    val red = background.red
+    val green = background.green
+    val blue = background.blue
+
+    val luminance = sqrt(0.299 * red * red + 0.587 * green * green + 0.114 * blue * blue)
+
+    return if (luminance > 0.5) Color.Black else Color.White
 }

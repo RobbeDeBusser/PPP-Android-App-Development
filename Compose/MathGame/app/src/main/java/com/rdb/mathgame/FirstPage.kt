@@ -1,5 +1,4 @@
 package com.rdb.mathgame
-
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,14 +28,12 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FirstPage(navController: NavController) {
-
     val systemUiController = rememberSystemUiController()
     systemUiController.setStatusBarColor(color = colorResource(id = R.color.green))
-
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Math Game", fontSize = 20.sp) },
+                title = { Text(text = "Math Game Robbe De Busser", fontSize = 20.sp) },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = colorResource(id = R.color.green),
                     titleContentColor = Color.White

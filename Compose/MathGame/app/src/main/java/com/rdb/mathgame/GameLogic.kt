@@ -3,15 +3,11 @@ package com.rdb.mathgame
 import kotlin.random.Random
 
 fun generateQuestion(selectedCategory : String) : ArrayList<Any>{
-
     var number1 = Random.nextInt(0,100)
     var number2 = Random.nextInt(0,100)
-
     val textQuestion : String
     val correctAnswer : Int
-
     when(selectedCategory){
-
         "add" -> {
             textQuestion = "$number1 + $number2"
             correctAnswer = number1 + number2
@@ -21,27 +17,20 @@ fun generateQuestion(selectedCategory : String) : ArrayList<Any>{
 
                 textQuestion = "$number1 - $number2"
                 correctAnswer = number1 - number2
-
             }else{
 
                 textQuestion = "$number2 - $number1"
                 correctAnswer = number2 - number1
-
             }
         }
-
         "multi" -> {
-
             number1 = Random.nextInt(0,16)
             number2 = Random.nextInt(0,16)
 
             textQuestion = "$number1 * $number2"
             correctAnswer = number1 * number2
-
         }
-
         else -> {
-
             if (number1 == 0 || number2 == 0){
 
                 textQuestion = "0 / 1"

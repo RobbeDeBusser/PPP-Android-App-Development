@@ -1,4 +1,6 @@
 <resources>
+    //Robbe De Busser
+    //EN-US taal bestand
     <string name="app_name">MultipleLanguages</string>
     <string name="hello">Hello World</string>
     <string name="show_toast">Show a Toast Message!</string>

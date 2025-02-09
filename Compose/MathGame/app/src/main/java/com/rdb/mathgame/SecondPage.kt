@@ -107,7 +107,7 @@ fun SecondPage(navController: NavController, category : String){
                     Text(
                         text =
                         when(category){
-                            "add" -> "Addition"
+                            "add" -> "Addition Robbe De Busser"
                             "sub" -> "Subtraction"
                             "multi" -> "Multiplication"
                             else -> "Division"

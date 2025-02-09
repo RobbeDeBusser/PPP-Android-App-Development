@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //Robbe De Busser
+    //nl-rBE taal bestand
     <string name="app_name">Meerdere talen</string>
     <string name="hello">Hallo Wereld</string>
     <string name="show_toast">Laat een Toast Bericht zien!</string>
